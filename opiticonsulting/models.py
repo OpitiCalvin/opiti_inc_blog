@@ -5,7 +5,7 @@ from django.db import models
 class Demo(models.Model):
     title = models.CharField('Title', max_length=30)
     brief = models.TextField('Short Brief', max_length=200)
-    link = models.CharField('Demo Url', max_length=50, blank=True)
+    link = models.CharField('Demo Url', max_length=100, blank=True)
     thumbnail = models.ImageField(upload_to='solution/', blank=True)
     
     def __str__(self):
