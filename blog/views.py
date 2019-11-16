@@ -11,17 +11,17 @@ from django.http import HttpResponseRedirect
 
 # def service(request):
 #     serv = Service.objects.all()
-#     return render(request,'opiticonsulting/services.html', { 'serv':serv })
+#     return render(request,'blog/services.html', { 'serv':serv })
 
 # def demo(request):
 #     sols = Demo.objects.all()
-#     return render(request,'opiticonsulting/solutions.html', {'sols': sols }) 
+#     return render(request,'blog/solutions.html', {'sols': sols }) 
 
 # def aboutUs(request):
-#     return render(request,'opiticonsulting/about-us.html',) 
+#     return render(request,'blog/about-us.html',) 
 
 # def aboutFounder(request):
-#     return render(request,'opiticonsulting/aboutFounder.html',) 
+#     return render(request,'blog/aboutFounder.html',) 
 
 # def contact(request):
 #     if request.method =='POST':
@@ -39,4 +39,4 @@ from django.http import HttpResponseRedirect
 #             return HttpResponseRedirect('/contact/')
 #     else:
 #         form = ContactForm()
-#     return render(request,'opiticonsulting/contact.html',{'form':form,})
+#     return render(request,'blog/contact.html',{'form':form,})
