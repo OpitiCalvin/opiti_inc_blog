@@ -106,7 +106,7 @@ ENV/
 #database
 *.sqlite3
 
-opiticonsulting/migrations/
+migrations/
 
 # static files
 static/
