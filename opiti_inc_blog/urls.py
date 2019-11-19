@@ -25,7 +25,7 @@ admin.site.index_title = 'Welcome to Opiti Inc Portal'
 
 urlpatterns = [
     # path('', include(('opiticonsulting.urls','opitInc'), namespace='opitInc')),
-    # path('blog/', include('zinnia.urls')),
+    path('api/', include('opiti_blog.urls')),
     path('', include(('zinnia.urls','opitInc'), namespace='opitInc')),
     path('comments/', include('django_comments.urls')),
     path('admin/', admin.site.urls),
