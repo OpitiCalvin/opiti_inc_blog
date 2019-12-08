@@ -20,7 +20,7 @@ class ContactSerializer(serializers.Serializer):
 
 		"""
 
-		return ContactModel.objects.create(**validated_data)
+		return Contact.objects.create(**validated_data)
 
 	def update(self, instance, validated_data):
 		r"""
