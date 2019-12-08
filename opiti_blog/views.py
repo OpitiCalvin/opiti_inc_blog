@@ -21,7 +21,7 @@ class ListContacts(APIView):
 		r"""
 		"""
 
-		data = JSONParser().parse(request
+		data = JSONParser().parse(request)
 		serializer = ContactSerializer(data = data)
 		if serializer.is_valid():
 			serializer.save()
