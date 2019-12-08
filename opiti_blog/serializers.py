@@ -7,11 +7,11 @@ class ContactSerializer(serializers.Serializer):
 
 	id = serializers.IntegerField(read_only=True)
 	name = serializers.CharField(required=True, allow_blank=False, max_length=50)
-	phone = serializers.CharField(required=False, allow_blank=True, max_length=15)
 	email = serializers.EmailField(required=True, allow_blank=False, max_length=50)
-	city = serializers.CharField(required=False, allow_blank=True, max_length=25)
+	phone = serializers.CharField(required=False, allow_blank=True, max_length=15)
+	# city = serializers.CharField(required=False, allow_blank=True, max_length=25)
 	country = serializers.CharField(required=True, allow_blank=False, max_length=25)
-	title = serializers.CharField(required=True, allow_blank=False, max_length=30)
+	subject = serializers.CharField(required=True, allow_blank=False, max_length=30)
 	message = serializers.CharField(required=True, allow_blank=False, max_length=300)
 
 	def create(self,  validated_data):
@@ -29,11 +29,11 @@ class ContactSerializer(serializers.Serializer):
 		"""
 
 		instance.name = validated_data.get('name', instance.name)
-		instance.phone = validated_data.get('phone', instance.phone)
 		instance.email = validated_data.get('email', instance.email)
-		instance.city = validated_data.get('city', instance.city)
+		instance.phone = validated_data.get('phone', instance.phone)
+		# instance.city = validated_data.get('city', instance.city)
 		instance.country = validated_data.get('country', instance.country)
-		instance.title = validated_data.get('title', instance.title)
+		instance.subject = validated_data.get('subject', instance.subject)
 		instance.message = validated_data.get('message', instance.message)
 
 		instance.save()
