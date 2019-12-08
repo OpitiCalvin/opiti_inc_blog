@@ -7,11 +7,11 @@ class Contact(models.Model):
 	"""
 	
 	name = models.CharField('Names', max_length= 50)
-	phone = models.CharField('Phone Contact', max_length=15, blank=True)
 	email = models.EmailField('E-Mail')
-	city = models.CharField('City', max_length=25, blank=True)
+	phone = models.CharField('Phone Contact', max_length=15, blank=True)
+	# city = models.CharField('City', max_length=25, blank=True)
 	country = models.CharField('Country', max_length=25, blank=True)
-	title = models.CharField('Title', max_length=30)
+	subhect = models.CharField('Subject', max_length=30)
 	message = models.TextField('Message')
 
 	def __str__(self):
