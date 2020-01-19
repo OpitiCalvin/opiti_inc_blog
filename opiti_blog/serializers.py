@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from opiti_blog.models import Contact
+from opiti_blog.models import Contact, Location
 
 class ContactSerializer(serializers.Serializer):
 	r"""
@@ -39,3 +39,21 @@ class ContactSerializer(serializers.Serializer):
 		instance.save()
 
 		return instance	
+
+class LocationSerializer(serializers.Serializer):
+	r"""
+	"""
+
+	id = serializers.IntegerField(read_only=True)
+	resp_id = serializers.IntegerField(required=True)
+	latitude = serializers.FloatField(required=True)
+	longitude = serializers.FloatField(required=True)
+	accuracy = serializers.FloatField(required=False)
+
+	def create(self,  validated_data):
+		r"""
+		Create and return a new client instance, given validated data.
+
+		"""
+
+		return Location.objects.create(**validated_data)

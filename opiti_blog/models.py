@@ -16,3 +16,19 @@ class Contact(models.Model):
 
 	def __str__(self):
 		return self.name
+
+class Location(models.Model):
+	r"""
+	A db model used with Wits ACMS project to get locations of their \n
+	respondents or health facilities they visited.
+
+	"""
+
+	resp_id = models.IntegerField(null=False, blank=False)
+	latitude = models.FloatField(null=False, blank=False)
+	longitude = models.FloatField(null=False, blank=False)
+	accuracy = models.FloatField(null=False, blank=False)
+	datetime = models.DateTimeField(auto_now_add=True)
+
+	def __str__(self):
+		return "Lat: {:f}; Lng: {:f}".format(self.latitude, self.longitude)
