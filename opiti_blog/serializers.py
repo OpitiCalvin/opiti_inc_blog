@@ -45,10 +45,12 @@ class LocationSerializer(serializers.Serializer):
 	"""
 
 	id = serializers.IntegerField(read_only=True)
-	resp_id = serializers.IntegerField(required=True)
+	resp_id = serializers.CharField(required=True)
+	phone = serializers.CharField(required=False)
 	latitude = serializers.FloatField(required=True)
 	longitude = serializers.FloatField(required=True)
-	accuracy = serializers.FloatField(required=False)
+	terms_accepted = serializers.BooleanField(required=True)
+	created = serializers.DateTimeField(required=False)
 
 	def create(self,  validated_data):
 		r"""

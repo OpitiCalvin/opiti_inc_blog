@@ -24,11 +24,12 @@ class Location(models.Model):
 
 	"""
 
-	resp_id = models.IntegerField(null=False, blank=False)
+	resp_id = models.CharField(max_length=15, blank=False)
+	phone = models.CharField(max_length=15, blank=True)
 	latitude = models.FloatField(null=False, blank=False)
 	longitude = models.FloatField(null=False, blank=False)
-	accuracy = models.FloatField(null=False, blank=False)
-	datetime = models.DateTimeField(auto_now_add=True)
+	terms_accepted = models.BooleanField(default=False)
+	created = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
 		return "Lat: {:f}; Lng: {:f}".format(self.latitude, self.longitude)
